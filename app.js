@@ -2,7 +2,7 @@ const regeneratorRuntime = require("./util/runtime")
 const $ = require('./util/api/request')
 App({
   async onLaunch() {
-    await this.checkLogin()
+    // await this.checkLogin()
   },
 
   async checkLogin() {

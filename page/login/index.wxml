@@ -1,3 +1,15 @@
-<view class="s-login--page">
-
+<view class="s-login--page flex-column-center-center">
+	<!-- 用户信息展示 -->
+	<view class="s-login--user-info flex-column-center-center">
+		<view class="s-account--user-avatar border-radius">
+			<open-data type="userAvatarUrl" class="s-account--user-avatar"></open-data>
+		</view>
+		<open-data type="userNickName" class="s-account--user-nickname"></open-data>
+	</view>
+	<!-- 微信授权按钮 -->
+	<view class="s-account--login-button">
+		<van-button type="primary" block open-type="getUserInfo" bind:getuserinfo="onGetUserInfo">微信授权</van-button>
+	</view>
 </view>
+
+<image class="s-login--claw-icon" src="/static/img/login/claw.png"></image>

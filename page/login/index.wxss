@@ -1,0 +1,33 @@
+.s-login--page {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.s-account--user-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.s-account--user-nickname {
+  font-size: 32rpx;
+  color: #555;
+  margin-top: 44rpx;
+}
+
+.s-login--claw-icon {
+  width: 420rpx;
+  height: 380rpx;
+  position: fixed;
+  z-index: 1;
+  bottom: -22rpx;
+  right: -44rpx;
+  transform: rotate(-18deg);
+  opacity: 0.2;
+}
+
+.s-account--login-button {
+  width: calc(100vw - 280rpx);
+  margin-top: 88rpx;
+}

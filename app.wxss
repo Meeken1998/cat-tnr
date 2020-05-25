@@ -1,0 +1,6 @@
+/**
+ * 全局样式（由于微信的样式隔离，组件内需要单独引入 global.wxss）
+ * 版本：v0.0.1
+ */
+
+@import './static//css/global.wxss'
