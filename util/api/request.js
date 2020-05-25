@@ -1,3 +1,8 @@
+/**
+ * 请求类
+ * 版本：v0.0.1
+ */
+
 let options = {
   host: 'http://localhost:4000/api/',
   header: {}

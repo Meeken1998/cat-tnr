@@ -1,2 +1,3 @@
-<!--page/login/index.wxml-->
-<text>page/login/index.wxml</text>
+<view class="s-login--page">
+
+</view>
