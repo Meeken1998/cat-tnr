@@ -2,14 +2,19 @@
  * 请求类
  * 版本：v0.0.1
  */
-
+const regeneratorRuntime = require("../runtime")
+const authing = require('../authing/authing')
 let options = {
   host: 'http://localhost:4000/api/',
-  header: {}
+  header: {},
+  userPoolId: '5ecb891fae9ae00850555f7b',
 }
+const Authing = new authing({
+  userPoolId: options.userPoolId
+})
 
-let storageToken = wx.getStorageSync('token')
-if (storageToken) options.header['Authorization'] = 'BASE-AUTH ' + storageToken
+let storageToken = wx.getStorageSync('_authing_token')
+if (storageToken) options.header['authorization'] = 'bearer ' + storageToken
 
 /* 封装好请求 */
 const _request = function (url, method, data) {
@@ -40,7 +45,7 @@ const _request = function (url, method, data) {
   }).catch(err => {
     if (err && err.data && err.data.code == 403) {
       // 403 code 表明用户未登录或无权查看
-      if (!wx.getStorageSync('token')) {
+      if (!wx.getStorageSync('_authing_token')) {
         // 从未登录或清除了缓存，先保存页面路由信息，再强制跳转到登录页面
         wx.setStorageSync('pageInfo', getCurrentPages())
         wx.reLaunch({
@@ -112,8 +117,8 @@ const _getToken = async function (code = wx.getStorageSync('loginCode').code) {
 
 /* 设置 token */
 const _setToken = function (token = '') {
-  options.header['Authorization'] = 'BASE-AUTH ' + token
-  wx.setStorageSync('token', token)
+  options.header['authorization'] = 'bearer ' + token
+  wx.setStorageSync('_authing_token', token)
 }
 
 /* 登录 */
@@ -197,6 +202,17 @@ const _download = function (url) {
   })
 }
 
+const _loginWithAuthing = async function () {
+  const code = wx.getStorageSync('loginCode').code
+  const userInfo = wx.getStorageSync('userInfo')
+  let authRes = await Authing.loginWithWxapp({
+    code,
+    detail: userInfo,
+    overideProfile: true
+  })
+  return authRes
+}
+
 module.exports = {
   _post,
   _get,
@@ -209,5 +225,7 @@ module.exports = {
   _getToken,
   _showLoading,
   _hideLoading,
-  _download
+  _download,
+  _loginWithAuthing,
+  _Authing: Authing
 }

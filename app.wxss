@@ -3,4 +3,10 @@
  * 版本：v0.0.1
  */
 
-@import './static//css/global.wxss'
+@import './static//css/global.wxss';
+
+view {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

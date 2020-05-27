@@ -1,6 +1,7 @@
 .s-login--page {
   width: 100vw;
   min-height: 100vh;
+  padding-bottom: 10vh;
 }
 
 .s-account--user-avatar {

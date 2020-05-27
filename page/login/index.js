@@ -16,9 +16,7 @@ Page({
     try {
       let res = await $._login()
       console.log(res)
-      const {
-        code
-      } = wx.getStorageSync('loginCode')
+
       this.setData({
         isLogin: true
       })
@@ -27,6 +25,20 @@ Page({
         isLogin: false
       })
     }
-  }
+  },
 
+  async onGetUserInfo(e) {
+    const {
+      code
+    } = wx.getStorageSync('loginCode')
+    $._showLoading('登录中')
+    let res = await $._Authing.loginWithWxapp({
+      code,
+      detail: e.detail,
+      phone: '',
+      overideProfile: true
+    })
+    console.log(res)
+    $._hideLoading()
+  }
 })
