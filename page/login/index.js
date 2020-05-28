@@ -13,14 +13,22 @@ Page({
   },
 
   async checkLogin() {
+    $._showLoading('自动登录中')
     try {
       let res = await $._login()
       console.log(res)
-
       this.setData({
         isLogin: true
       })
+      $._hideLoading()
+      getCurrentPages().length > 1 ? wx.navigateBack() : wx.reLaunch({
+        url: '/page/index/index',
+      })
     } catch (err) {
+      wx.showToast({
+        title: '请使用微信授权',
+        icon: 'none'
+      })
       this.setData({
         isLogin: false
       })
@@ -38,7 +46,9 @@ Page({
       phone: '',
       overideProfile: true
     })
-    console.log(res)
     $._hideLoading()
+    getCurrentPages().length > 1 ? wx.navigateBack() : wx.reLaunch({
+      url: '/page/index/index',
+    })
   }
 })
