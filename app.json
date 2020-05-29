@@ -9,5 +9,30 @@
     "navigationBarTitleText": "浙外猫咪图鉴",
     "navigationBarTextStyle": "black"
   },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#608fda",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "static/img/tabbar/home.png",
+        "iconPath": "static/img/tabbar/home-o.png",
+        "pagePath": "page/index/index",
+        "text": "TNR"
+      },
+      {
+        "selectedIconPath": "static/img/tabbar/cat.png",
+        "iconPath": "static/img/tabbar/cat-o.png",
+        "pagePath": "page/index/index",
+        "text": "图鉴"
+      },
+      {
+        "selectedIconPath": "static/img/tabbar/tips.png",
+        "iconPath": "static/img/tabbar/tips-o.png",
+        "pagePath": "page/index/index",
+        "text": "手册"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }
