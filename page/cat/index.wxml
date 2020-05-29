@@ -2,7 +2,12 @@
 	<!-- 导航栏 -->
 	<van-sticky>
 		<view class="s-cat--category-bar">
-			<van-search value="{{ search }}" placeholder="请输入猫咪名称" shape="round" bind:search="handleSearch" />
+			<view class="flex-row-between-center s-cat--tool-bar">
+				<view style="width: calc(100% - 64rpx);">
+					<van-search value="{{ search }}" placeholder="请输入猫咪名称" shape="round" bind:search="handleSearch" />
+				</view>
+				<add-button />
+			</view>
 			<van-dropdown-menu>
 				<van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
 				<van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />

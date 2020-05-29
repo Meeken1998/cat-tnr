@@ -13,3 +13,8 @@
   min-height: calc(100vh - 104px);
   background-color: #f7f8fa;
 }
+
+.s-cat--tool-bar {
+  width: 100%;
+  padding-right: 12px;
+}
