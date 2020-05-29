@@ -1,0 +1,24 @@
+<view class="s-card--container">
+	<!-- 欢迎页面 bannar -->
+	<view class="s-card--bannar flex-row-between-center">
+		<!-- 左侧日期与标题 -->
+		<view class="s-card--bannar-left-side">
+			<view class="tooltip">{{ options.tooltip }}</view>
+			<view class="title">{{ options.title }}</view>
+		</view>
+		<!-- 右侧头像 -->
+		<image class="s-card--avatar" src="{{ userInfo.photo }}"></image>
+	</view>
+	<view class="s-card--welcome" hover-class="hover">
+		<image class="wrapper-image" mode="aspectFill" src="{{ options.wrapper }}"></image>
+		<view class="info">
+			<!-- 上层标题 -->
+			<view>
+				<view>今日吸猫</view>
+				<view class="text-limit-1" style="font-size: 44rpx;font-weight: bold;">小明</view>
+			</view>
+			<!-- 内容 -->
+			<view style="opacity: 0.9;">男孩，1岁，现居雅正 7</view>
+		</view>
+	</view>
+</view>

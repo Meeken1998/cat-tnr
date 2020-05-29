@@ -1,0 +1,10 @@
+<view class="s-cat--page flex-column-start-center">
+	<!-- 欢迎页面 -->
+	<welcome-card />
+
+	<!-- 猫咪分类 -->
+	<cat-category-card />
+
+	<!-- 文章聚合 -->
+	<article-card />
+</view>

@@ -1,0 +1,22 @@
+.s-article--card {
+  width: calc(100vw - 66rpx);
+  min-height: 400rpx;
+  margin: 22rpx 33rpx;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4rpx 8rpx 0rpx, rgba(0, 0, 0, 0.05) 0rpx 6rpx 20rpx 0rpx;
+  border-radius: 20rpx;
+  padding: 36rpx 36rpx 44rpx 36rpx;
+  overflow: hidden;
+  background-color: #fff7e4;
+}
+
+.s-article--card-title {
+  font-size: 44rpx;
+  color: #000;
+  margin-bottom: 22rpx;
+}
+
+.paper {
+  box-shadow: 0 4rpx 12rpx 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8rpx;
+  overflow: hidden;
+}

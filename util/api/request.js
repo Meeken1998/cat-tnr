@@ -5,7 +5,7 @@
 const regeneratorRuntime = require("../runtime")
 const authing = require('../authing/authing')
 let options = {
-  host: 'http://localhost:4000/api/',
+  host: 'http://192.168.50.189:4000/api/v1/',
   header: {},
   userPoolId: '5ecb891fae9ae00850555f7b',
 }
@@ -26,7 +26,7 @@ const _request = function (url, method, data) {
       data,
       header: options.header,
       success(res) {
-        if (res.statusCode === 200 && res.data) {
+        if (res.statusCode === 200 && res.data !== undefined) {
           result = res.data
           resolve(res.data)
         } else {
@@ -60,10 +60,10 @@ const _request = function (url, method, data) {
       }
     } else {
       /* 错误收集 */
-      if (result && result.msg) {
+      if (result && result.error && result.message) {
         wx.showModal({
           title: '温馨提示',
-          content: result.msg,
+          content: result.message,
           showCancel: false
         })
       }

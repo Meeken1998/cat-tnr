@@ -4,8 +4,8 @@
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
   "usingComponents": {
-    "welcome-card": "/component/welcome-card/index",
-    "cat-category-card": "/component/cat-category-card/index",
-    "article-card": "/component/article-card/index"
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-search": "@vant/weapp/search/index"
   }
 }

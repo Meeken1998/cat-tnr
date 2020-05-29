@@ -1,0 +1,8 @@
+<view class="s-article--card">
+	<view class="s-article--card-title">科普文章</view>
+	<van-cell-group custom-class="paper">
+		<van-cell title="什么是 TNR" label="TNR 是一种取代安乐死的人道管理和减少流浪犬和流浪猫数量的方法。" is-link />
+		<van-cell title="流浪猫投喂指南" label="冬天来临，流浪猫的生活更加困难。虽然处境困难，但是也少不了广大铲屎官的一片热心，在这寒冷的天气中，许多好心的铲屎官会主动的去投喂在外流浪的猫咪们。" is-link />
+		<van-cell title="关注我们" value="浙外猫咪图鉴" is-link border="{{ false }}" />
+	</van-cell-group>
+</view>

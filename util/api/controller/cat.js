@@ -5,8 +5,8 @@
 const regeneratorRuntime = require("../../runtime")
 const $ = require('../request')
 const Cat = {
-  async list(page = 1, limit = 10) {
-    
+  async helloWorld() {
+    return $._get('', {})
   }
 }
 

@@ -1,4 +1,4 @@
-// const regeneratorRuntime = require("../../util/runtime.js")
+const regeneratorRuntime = require("../../util/runtime.js")
 const $ = require('../../util/api/request')
 const Api = require('../../util/api/index')
 const App = getApp()

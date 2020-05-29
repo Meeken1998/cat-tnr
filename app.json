@@ -1,7 +1,8 @@
 {
   "pages": [
     "page/index/index",
-    "page/login/index"
+    "page/login/index",
+    "page/cat/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +24,7 @@
       {
         "selectedIconPath": "static/img/tabbar/cat.png",
         "iconPath": "static/img/tabbar/cat-o.png",
-        "pagePath": "page/index/index",
+        "pagePath": "page/cat/index",
         "text": "图鉴"
       },
       {

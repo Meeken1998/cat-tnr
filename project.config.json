@@ -62,6 +62,13 @@
 					"id": -1,
 					"name": "登录页面",
 					"pathName": "page/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "猫咪图鉴",
+					"pathName": "page/cat/index",
 					"scene": null
 				}
 			]

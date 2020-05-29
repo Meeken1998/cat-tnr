@@ -1,0 +1,9 @@
+.s-cat--page {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.s-cat--category-bar {
+  box-shadow: 0px 5rpx 8rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+}

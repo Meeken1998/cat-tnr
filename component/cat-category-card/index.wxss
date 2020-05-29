@@ -1,0 +1,71 @@
+@import '/static/css/global.wxss';
+
+.s-category--card {
+  width: calc(100vw - 66rpx);
+  height: 480rpx;
+  border-radius: 20rpx;
+  padding-top: 11rpx;
+  background-color: #fafafa;
+  background-image: url(https://img.meek3n.cn/cat/love.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  overflow: hidden;
+  margin: 22rpx 33rpx;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4rpx 8rpx 0rpx, rgba(0, 0, 0, 0.05) 0rpx 6rpx 20rpx 0rpx;
+  transition: all 0.3s ease 0s;
+
+  line-height: 1.5;
+}
+
+.s-category--info {
+  width: 100%;
+  height: 100%;
+  padding: 36rpx;
+  color: #555;
+}
+
+.s-category--cat-icon-scroller {
+  width: 100%;
+  height: 240rpx;
+  margin-top: 33rpx;
+}
+
+.s-category--cat-icon-scroller .cat-bar {
+  min-width: calc(100vw - 66rpx);
+  padding: 0 4rpx;
+  height: 240rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.s-category--cat-icon-scroller .cat-icon {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.s-category--cat-icon-scroller .cat-button:not(:first-child) {
+  margin-left: 22rpx;
+}
+
+.s-category--cat-icon-scroller .cat-button {
+  transition: all .3s;
+  border-radius: 10rpx;
+  width: 200rpx;
+  height: 200rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: rgba(96, 143, 218, 0.1) 0px 2rpx 8rpx 0rpx, rgba(96, 143, 218, 0.1) 0rpx 3rpx 8rpx 0rpx;
+}
+
+.cat-button.hover {
+  opacity: 0.6;
+}
+
+.s-category--arrow {
+  width: 100%;
+}

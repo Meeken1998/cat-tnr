@@ -1,0 +1,71 @@
+@import '/static/css/global.wxss';
+
+.s-card--container {
+  width: calc(100vw - 66rpx);
+  margin: 22rpx 33rpx;
+}
+
+.s-card--welcome {
+  width: 100%;
+  height: 600rpx;
+  border-radius: 20rpx;
+  background-color: #f7f8fa;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4rpx 8rpx 0rpx, rgba(0, 0, 0, 0.05) 0rpx 6rpx 20rpx 0rpx;
+  transition: all 0.3s ease 0s;
+}
+
+.s-card--welcome.hover {
+  transform: scale(0.98);
+}
+
+.s-card--welcome .wrapper-image {
+  width: calc(100vw - 66rpx);
+  height: 600rpx;
+  position: absolute;
+  border-radius: 20rpx;
+  z-index: 0;
+}
+
+.s-card--welcome .info {
+  width: calc(100vw - 66rpx);
+  height: 600rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: absolute;
+  border-radius: 20rpx;
+  padding: 36rpx;
+  color: #fff;
+  z-index: 2;
+}
+
+.s-card--bannar {
+  width: 100%;
+  margin-bottom: 22rpx;
+}
+
+.s-card--bannar .s-card--bannar-left-side {
+  width: 60%;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.s-card--bannar .s-card--bannar-left-side .tooltip {
+  color: #888;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.s-card--bannar .s-card--bannar-left-side .title {
+  color: #222;
+  font-weight: bold;
+  font-size: 44rpx;
+}
+
+.s-card--avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
