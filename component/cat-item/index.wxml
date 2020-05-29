@@ -1,0 +1,7 @@
+<view class="s-cat--item flex-row-between-center" hover-class="hover">
+	<image class="avatar" src="{{ options.photo }}"></image>
+	<view class="name">{{ options.name }}</view>
+</view>
+<view class="divider-line">
+	<view style="{{ border ? 'width: calc(100% - 100rpx - 36rpx);margin-left: calc(100rpx + 36rpx);height: 1rpx;background: #f3f3f3;' : 'display: none;' }}"></view>
+</view>
