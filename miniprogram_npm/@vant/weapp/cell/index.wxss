@@ -68,10 +68,6 @@
   flex: 1
 }
 
-.van-cell__title {
-  color: #608fda;
-}
-
 .van-cell__title:empty,
 .van-cell__value:empty {
   display: none
@@ -154,4 +150,17 @@
 .van-cell--large .van-cell__label {
   font-size: 14px;
   font-size: var(--cell-large-label-font-size, 14px)
+}
+
+.van-cell--info {
+  /* padding-left: 16rpx !important;
+  padding-right: 16rpx !important; */
+}
+
+.van-cell--info .van-cell__value {
+  color: #444;
+}
+
+.van-cell--info.hover-class {
+  background-color: #f7f8fa;
 }

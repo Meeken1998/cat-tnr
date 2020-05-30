@@ -1,0 +1,83 @@
+.s-detail--page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 28rpx 0;
+}
+
+.s-detail--cat-image {
+  width: calc(100% - 72rpx);
+  height: 450rpx;
+  border-radius: 20rpx;
+  margin: 0 36rpx;
+  margin-bottom: 28rpx;
+}
+
+.s-detail--cat-name {
+  font-size: 36rpx;
+  color: #222;
+  font-weight: 500;
+  padding: 0 0 28rpx 0;
+}
+
+text.color-icon {
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.item .title {
+  margin-top: 11rpx;
+  font-size: 24rpx;
+  color: #555;
+}
+
+.color-icon.blue {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.color-icon.pink {
+  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+
+.color-icon.orange {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.color-icon.green {
+  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+}
+
+.color-icon.red {
+  background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+
+.color-icon.indiared {
+  background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+}
+
+.jan-icon {
+  font-size: 56rpx;
+}
+
+.s-detail--cat-menu-icon {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 33rpx;
+}
+
+.s-detail--cat-menu-icon .item {
+  width: calc(25vw);
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.s-cat--info-box {
+  width: calc(100% - 72rpx);
+  margin: 0 36rpx;
+}

@@ -13,5 +13,13 @@ Component({
       type: Boolean,
       value: true
     }
+  },
+
+  methods: {
+    handleViewCat() {
+      wx.navigateTo({
+        url: '/page/cat/detail',
+      })
+    }
   }
 })

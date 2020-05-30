@@ -26,6 +26,7 @@ const _request = function (url, method, data) {
       data,
       header: options.header,
       success(res) {
+        if (res.data.code == 403) reject(res)
         if (res.statusCode === 200 && res.data !== undefined) {
           result = res.data
           resolve(res.data)
@@ -45,19 +46,9 @@ const _request = function (url, method, data) {
   }).catch(err => {
     if (err && err.data && err.data.code == 403) {
       // 403 code 表明用户未登录或无权查看
-      if (!wx.getStorageSync('_authing_token')) {
-        // 从未登录或清除了缓存，先保存页面路由信息，再强制跳转到登录页面
-        wx.setStorageSync('pageInfo', getCurrentPages())
-        wx.reLaunch({
-          url: '/pages/login/index',
-        })
-      } else {
-        // 曾经登录过，却因为 token 过期鉴权失败，则普通跳转即可
-        wx.removeStorageSync('pagesInfo') // 清除路由信息
-        wx.navigateTo({
-          url: '/pages/login/index',
-        })
-      }
+      wx.navigateTo({
+        url: '/page/login/index',
+      })
     } else {
       /* 错误收集 */
       if (result && result.error && result.message) {

@@ -2,7 +2,8 @@
   "pages": [
     "page/index/index",
     "page/login/index",
-    "page/cat/index"
+    "page/cat/index",
+    "page/cat/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

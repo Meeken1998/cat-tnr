@@ -1,0 +1,30 @@
+<view class="s-detail--page">
+	<image wx:if="{{ cat.photo && cat.photo.length }}" class="s-detail--cat-image" src="{{ cat.photo[0] }}" mode="aspectFill"></image>
+	<view wx:if="{{ cat.name }}" class="s-detail--cat-menu-icon">
+		<view class="item">
+			<text wx:if="{{ cat.male }}" class="jan-icon jan-icon-man color-icon blue"></text>
+			<text wx:else class="jan-icon jan-icon-woman color-icon pink"></text>
+			<text class="title">性别</text>
+		</view>
+		<view class="item">
+			<text class="jan-icon jan-icon-skin color-icon orange"></text>
+			<text class="title">{{ '毛色' }}</text>
+		</view>
+		<view class="item">
+			<text wx:if="{{ cat.sterilization }}" class="jan-icon jan-icon-check-circle color-icon green"></text>
+			<text wx:else class="jan-icon jan-icon-close-circle color-icon red"></text>
+			<text class="title">绝育</text>
+		</view>
+		<view class="item">
+			<text class="jan-icon jan-icon-smile color-icon indiared"></text>
+			<text class="title">性格</text>
+		</view>
+	</view>
+	<view class="s-cat--info-box">
+		<van-cell-group>
+			<van-cell wx:for="{{ catInfo }}" wx:key="key" title="{{ item.key }}" value="{{ item.value }}" info border="{{ index < catInfo.length - 1 }}" />
+		</van-cell-group>
+		<text class="jan-icon jan-icon-man color-icon"></text>
+	</view>
+
+</view>

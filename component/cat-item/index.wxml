@@ -1,4 +1,4 @@
-<view class="s-cat--item flex-row-between-center" hover-class="hover">
+<view class="s-cat--item flex-row-between-center" hover-class="hover" bindtap="handleViewCat">
 	<image class="avatar" src="{{ options.photo }}"></image>
 	<view class="name">{{ options.name }}</view>
 </view>

@@ -4,10 +4,11 @@
  */
 
 @import './static//css/global.wxss';
+@import './static/css/icon.wxss';
 
 view {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #666;
+  /* color: #666; */
 }

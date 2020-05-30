@@ -12,6 +12,7 @@ component_1.VantComponent({
   ],
   mixins: [link_1.link],
   props: {
+    info: Boolean,
     title: null,
     value: null,
     icon: String,

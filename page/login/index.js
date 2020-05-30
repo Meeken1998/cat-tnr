@@ -21,8 +21,12 @@ Page({
         isLogin: true
       })
       $._hideLoading()
-      getCurrentPages().length > 1 ? wx.navigateBack() : wx.reLaunch({
-        url: '/page/index/index',
+      wx.getUserInfo({
+        success: async userRes => {
+          await this.onGetUserInfo({
+            detail: userRes
+          })
+        }
       })
     } catch (err) {
       wx.showToast({
@@ -36,9 +40,11 @@ Page({
   },
 
   async onGetUserInfo(e) {
+    const loginCode = wx.getStorageSync('loginCode')
+    if (!loginCode) return
     const {
       code
-    } = wx.getStorageSync('loginCode')
+    } = loginCode
     $._showLoading('登录中')
     let res = await $._Authing.loginWithWxapp({
       code,
@@ -46,6 +52,8 @@ Page({
       phone: '',
       overideProfile: true
     })
+    console.log('用户信息', res)
+    $._setToken(wx.getStorageSync('_authing_token'))
     $._hideLoading()
     getCurrentPages().length > 1 ? wx.navigateBack() : wx.reLaunch({
       url: '/page/index/index',
