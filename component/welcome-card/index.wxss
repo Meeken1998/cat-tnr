@@ -37,7 +37,7 @@
   position: absolute;
   border-radius: 20rpx;
   padding: 36rpx;
-  color: #fff;
+  color: #fff !important;
   z-index: 2;
 }
 
@@ -68,4 +68,8 @@
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
+}
+
+.today-cat {
+  color: #fff !important;
 }

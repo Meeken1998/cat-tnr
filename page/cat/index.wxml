@@ -8,7 +8,7 @@
 				</view>
 				<add-button />
 			</view>
-			<van-dropdown-menu>
+			<van-dropdown-menu active-color="#9bb5e5">
 				<van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
 				<van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
 				<van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />

@@ -13,12 +13,12 @@
 		<image class="wrapper-image" mode="aspectFill" src="{{ options.wrapper }}"></image>
 		<view class="info">
 			<!-- 上层标题 -->
-			<view>
-				<view>今日吸猫</view>
-				<view class="text-limit-1" style="font-size: 44rpx;font-weight: bold;">小明</view>
+			<view class="today-cat">
+				<view class="today-cat">今日吸猫</view>
+				<view class="text-limit-1 today-cat" style="font-size: 44rpx;font-weight: bold;">小明</view>
 			</view>
 			<!-- 内容 -->
-			<view style="opacity: 0.9;">男孩，1岁，现居雅正 7</view>
+			<view class="today-cat" style="opacity: 0.9;">男孩，1岁，现居雅正 7</view>
 		</view>
 	</view>
 </view>

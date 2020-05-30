@@ -11,7 +11,7 @@
 
 .s-article--card-title {
   font-size: 44rpx;
-  color: #000;
+  color: #333;
   margin-bottom: 22rpx;
 }
 
