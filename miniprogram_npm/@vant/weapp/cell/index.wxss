@@ -14,8 +14,8 @@
   line-height: var(--cell-line-height, 24px);
   color: #323233;
   color: var(--cell-text-color, #323233);
-  background-color: #fff;
-  background-color: var(--cell-background-color, #fff)
+  /* background-color: #fff;
+  background-color: var(--cell-background-color, #fff) */
 }
 
 .van-cell:after {

@@ -19,4 +19,5 @@
   box-shadow: 0 4rpx 12rpx 0 rgba(0, 0, 0, 0.1);
   border-radius: 8rpx;
   overflow: hidden;
+  background-color: #fff;
 }

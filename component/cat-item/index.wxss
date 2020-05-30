@@ -19,6 +19,7 @@
 
 .s-cat--item .name {
   width: calc(100% - 100rpx - 36rpx);
+  color: #444;
 }
 
 .divider-line {
