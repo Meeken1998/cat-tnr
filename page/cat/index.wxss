@@ -18,3 +18,24 @@
   width: 100%;
   padding-right: 12px;
 }
+
+.s-cat--404 {
+  width: 100%;
+  height: 80vh;
+}
+
+.s-cat--404>image {
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.s-cat--404>view {
+  color: #888;
+  font-size: 32rpx;
+  margin-top: 28rpx;
+}
+
+.s-cat--404>view.clear-search {
+  color: #7aa5eb;
+  margin-top: 11rpx;
+}

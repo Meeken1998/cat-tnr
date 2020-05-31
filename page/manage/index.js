@@ -58,10 +58,19 @@ Page({
   },
 
   async handlePublish() {
+    if (!this.checkInput()) return
     const imageList = this.data.fileList.map(item => item.path)
     try {
       $._showLoading('图片上传中')
       let uploadRes = await Api.Upload.uploadList(imageList)
+      $._hideLoading()
+      if (!uploadRes) {
+        wx.showToast({
+          title: '图片上传失败，请联系管理员',
+          icon: 'none'
+        })
+        return
+      }
       let cat = {
         name: this.data.name,
         nickname: this.data.nickname,
@@ -69,7 +78,7 @@ Page({
         male: !this.data.maleIndex,
         status: this.data.statusList[this.data.statusIndex],
         sterilization: !!this.data.sterilizationIndex,
-        sterilizationDate: !this.data.sterilizationIndex ? 0 : new Date(this.data.sterilizationDate).valueOf(),
+        sterilizationDate: !this.data.sterilizationIndex ? 0 : parseInt(new Date(this.data.sterilizationDate).valueOf() / 1000),
         character: this.data.characterList[this.data.characterIndex],
         firstMeetTime: this.data.firstMeetTime,
         relationship: this.data.relationship,
@@ -93,7 +102,45 @@ Page({
         content: '猫咪信息保存失败，请联系管理员'
       })
     }
+  },
 
-
+  checkInput() {
+    if (!this.data.name) {
+      wx.showToast({
+        title: '请输入猫咪大名',
+        icon: 'none'
+      })
+      return false
+    }
+    if (!this.data.fileList.length) {
+      wx.showToast({
+        title: '请至少上传一张猫咪图片',
+        icon: 'none'
+      })
+      return false
+    }
+    if (this.data.sterilizationIndex && (!this.data.sterilizationDate || !new Date(this.data.sterilizationDate).valueOf())) {
+      wx.showToast({
+        title: '请输入正确的绝育时间',
+        icon: 'none'
+      })
+      return false
+    }
+    if (!this.data.firstMeetTime) {
+      wx.showToast({
+        title: '请输入和猫咪的初次见面时间',
+        icon: 'none'
+      })
+      return false
+    }
+    if (!this.data.relationship) {
+      wx.showToast({
+        title: '请完善猫际关系',
+        icon: 'none'
+      })
+      return false
+    }
+    return true
   }
+
 })

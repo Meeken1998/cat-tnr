@@ -1,22 +1,27 @@
-<view class="s-cat--page">
+<view wx:if="{{ list }}" class="s-cat--page">
 	<!-- 导航栏 -->
 	<van-sticky>
 		<view class="s-cat--category-bar">
 			<view class="flex-row-between-center s-cat--tool-bar">
 				<view style="width: calc(100% - 34px);">
-					<van-search value="{{ search }}" placeholder="请输入猫咪名称" shape="round" bind:search="handleSearch" />
+					<van-search value="{{ search }}" placeholder="请输入猫咪名称" shape="round" bind:change="handleSearch" />
 				</view>
 				<add-button />
 			</view>
 			<van-dropdown-menu active-color="#9bb5e5">
-				<van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-				<van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
-				<van-dropdown-item value="{{ value3 }}" options="{{ option3 }}" />
+				<van-dropdown-item data-k="value1" value="{{ value1 }}" options="{{ option1 }}" bind:change="handleDropMenuChange" />
+				<van-dropdown-item data-k="value2" value="{{ value2 }}" options="{{ option2 }}" bind:change="handleDropMenuChange" />
+				<van-dropdown-item data-k="value3" value="{{ value3 }}" options="{{ option3 }}" bind:change="handleDropMenuChange" />
 			</van-dropdown-menu>
 		</view>
 	</van-sticky>
 	<!-- 猫咪信息 -->
 	<view class="s-cat--info-box">
-		<cat-item wx:for="{{ list }}" wx:key="key" options="{{ item }}" />
+		<cat-item wx:for="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? searchList : list }}" wx:key="key" options="{{ item }}" />
+		<view wx:if="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? !searchList.length : !list.length }}" class="s-cat--404 flex-column-center-center">
+			<image src="/static/img/list/404.png"></image>
+			<view>猫咪们迷路啦</view>
+			<view wx:if="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' }}" class="clear-search" bindtap="handleClearSearch">重新筛选</view>
+		</view>
 	</view>
 </view>

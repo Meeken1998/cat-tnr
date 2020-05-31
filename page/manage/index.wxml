@@ -17,7 +17,7 @@
 			<van-cell title="是否绝育" value="{{ sterilizationList[sterilizationIndex] }}" is-link />
 		</picker>
 		<van-field value="{{ sterilizationDate }}" data-t="sterilizationDate" clearable label="绝育时间" placeholder="如 2019-05-23" bind:change="handleValueChange" input-align="right" disabled="{{ sterilizationIndex == 0 }}" />
-		<van-field value="{{ firstMeetTime }}" data-t="firstMeetTime" clearable label="初次见面" placeholder="如 2019-05-23" bind:change="handleValueChange" input-align="right" />
+		<van-field value="{{ firstMeetTime }}" data-t="firstMeetTime" clearable label="初次见面" placeholder="如 2019-05-23，2019 年夏等" bind:change="handleValueChange" input-align="right" />
 		<picker bindchange="handlePickerChange" data-t="character" value="{{ characterIndex }}" range="{{ characterList }}">
 			<van-cell title="性格" value="{{ characterList[characterIndex] }}" is-link />
 		</picker>

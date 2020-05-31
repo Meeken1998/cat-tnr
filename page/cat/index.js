@@ -5,8 +5,9 @@ const App = getApp()
 
 Page({
   data: {
-    list: [],
+    list: null,
     search: '',
+    searchList: [],
     option1: [{
         text: '全部毛色',
         value: '全部毛色'
@@ -76,7 +77,10 @@ Page({
   },
 
   handleSearch(e) {
-    console.log(e)
+    this.setData({
+      search: e.detail
+    })
+    this.getSearchList()
   },
 
   async onPullDownRefresh() {
@@ -96,5 +100,30 @@ Page({
         list: res.data
       })
     }
+  },
+
+  getSearchList() {
+    let catList = this.data.list
+    let searchList = catList.filter(item => ((this.data.value1 == '全部毛色' || item.color == this.data.value1) && (this.data.value2 == '全部性格' || item.character == this.data.value2) && (this.data.value3 == '全部状态' || item.status == this.data.value3) && (!this.data.search || JSON.stringify(item).includes(this.data.search))))
+    this.setData({
+      searchList
+    })
+  },
+
+  handleDropMenuChange(e) {
+    let data = this.data
+    data[e.currentTarget.dataset.k] = e.detail
+    this.setData(data)
+    this.getSearchList()
+  },
+
+  handleClearSearch() {
+    this.setData({
+      search: '',
+      value1: '全部毛色',
+      value2: '全部性格',
+      value3: '全部状态'
+    })
+    this.getSearchList()
   }
 })
