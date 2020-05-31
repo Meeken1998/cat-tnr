@@ -86,12 +86,23 @@ Page({
         relations: [],
         timeline: []
       }
-      let res = await Api.Cat.create(cat)
+      let res
+      if (!this.data.id) {
+        res = await Api.Cat.create(cat)
+      } else {
+        res = await Api.Cat.update(this.data.id, Object.assign(cat, {
+          _id: this.data.id
+        }))
+      }
       if (res.code == 200) {
         wx.showModal({
           cancelColor: 'cancelColor',
           title: '温馨提示',
-          content: '保存猫咪信息成功'
+          content: '保存猫咪信息成功',
+          showCancel: false,
+          success() {
+            wx.navigateBack({})
+          }
         })
       }
     } catch (err) {
@@ -141,6 +152,34 @@ Page({
       return false
     }
     return true
+  },
+
+  async onLoad(e) {
+    if (e.id) {
+      this.setData({
+        id: e.id
+      })
+    }
+    await this.getCurrentCat()
+  },
+
+  async getCurrentCat() {
+    let id = this.data.id
+    let catRes = await Api.Cat.get(id)
+    if (catRes.code != 200) return
+    let cat = catRes.data
+    cat.maleIndex = this.data.maleList.indexOf(cat.male) == -1 ? 0 : this.data.maleList.indexOf(cat.male)
+    cat.colorIndex = this.data.colorList.indexOf(cat.color) == -1 ? 0 : this.data.colorList.indexOf(cat.color)
+    cat.statusIndex = this.data.statusList.indexOf(cat.status) == -1 ? 0 : this.data.statusList.indexOf(cat.status)
+    cat.sterilizationIndex = this.data.sterilizationList.indexOf(cat.sterilization) == -1 ? 0 : this.data.sterilizationList.indexOf(cat.sterilization)
+    cat.sterilizationDate = cat.sterilizationDate == '0' ? '' : cat.sterilizationDate
+
+    cat.fileList = cat.photo.map(item => {
+      return {
+        path: item
+      }
+    })
+    this.setData(cat)
   }
 
 })

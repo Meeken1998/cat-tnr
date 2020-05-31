@@ -16,7 +16,7 @@
 		<picker bindchange="handlePickerChange" data-t="sterilization" value="{{ sterilizationIndex }}" range="{{ sterilizationList }}">
 			<van-cell title="是否绝育" value="{{ sterilizationList[sterilizationIndex] }}" is-link />
 		</picker>
-		<van-field value="{{ sterilizationDate }}" data-t="sterilizationDate" clearable label="绝育时间" placeholder="如 2019-05-23" bind:change="handleValueChange" input-align="right" disabled="{{ sterilizationIndex == 0 }}" />
+		<van-field value="{{ sterilizationDate }}" data-t="sterilizationDate" clearable label="绝育时间" placeholder="如 2019-05-23，未绝育默认为空" bind:change="handleValueChange" input-align="right" disabled="{{ sterilizationIndex == 0 }}" />
 		<van-field value="{{ firstMeetTime }}" data-t="firstMeetTime" clearable label="初次见面" placeholder="如 2019-05-23，2019 年夏等" bind:change="handleValueChange" input-align="right" />
 		<picker bindchange="handlePickerChange" data-t="character" value="{{ characterIndex }}" range="{{ characterList }}">
 			<van-cell title="性格" value="{{ characterList[characterIndex] }}" is-link />
@@ -26,7 +26,7 @@
 	</van-cell-group>
 
 	<view class="s-manage--button-bar">
-		<van-button type="info" round custom-class="publish-button" bind:click="handlePublish">保存</van-button>
+		<van-button type="info" round custom-class="publish-button" bind:click="handlePublish">{{ id ? '修改' : '保存' }}</van-button>
 	</view>
 
 </view>

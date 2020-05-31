@@ -17,8 +17,13 @@
 	</van-sticky>
 	<!-- 猫咪信息 -->
 	<view class="s-cat--info-box">
-		<cat-item wx:for="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? searchList : list }}" wx:key="key" options="{{ item }}" />
-		<view wx:if="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? !searchList.length : !list.length }}" class="s-cat--404 flex-column-center-center">
+		<view wx:if="{{ loading && !list.length }}" class="loading">
+			<van-skeleton title avatar row="3" />
+			<van-skeleton title avatar row="3" />
+			<van-skeleton title avatar row="3" />
+		</view>
+		<cat-item wx:for="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? searchList : list }}" wx:key="key" options="{{ item }}" border="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? index !== searchList.length - 1 : index !== list.length - 1 }}" />
+		<view wx:if="{{ !loading && (search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? !searchList.length : !list.length) }}" class="s-cat--404 flex-column-center-center">
 			<image src="/static/img/list/404.png"></image>
 			<view>猫咪们迷路啦</view>
 			<view wx:if="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' }}" class="clear-search" bindtap="handleClearSearch">重新筛选</view>

@@ -64,7 +64,7 @@ const Upload = {
         } else { //本地图片，需要上传
           this.uploadImg(arr[i]).then(res => {
             if (res.imageURL) {
-              newArr.push('http://' + res.imageURL)
+              newArr.push('https://' + res.imageURL)
             }
           })
         }

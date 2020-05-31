@@ -5,9 +5,10 @@ const App = getApp()
 
 Page({
   data: {
-    list: null,
+    list: [],
     search: '',
     searchList: [],
+    loading: true,
     option1: [{
         text: '全部毛色',
         value: '全部毛色'
@@ -89,7 +90,15 @@ Page({
   },
 
   async onShow() {
+    // $._showLoading()
+    this.setData({
+      loading: true
+    })
     await this.getCatList()
+    this.setData({
+      loading: false
+    })
+    // $._hideLoading()
   },
 
 

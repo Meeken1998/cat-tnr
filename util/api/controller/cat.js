@@ -37,6 +37,11 @@ const Cat = {
   async get(id = '') {
     let res = await $._get(`cat/${id}`, {})
     return res
+  },
+
+  async update(id = '', options = {}) {
+    let res = await $._put(`cat/${id}`, options)
+    return res
   }
 }
 

@@ -28,7 +28,8 @@ const dic = {
     title: '大名',
   },
   nickname: {
-    title: '昵称'
+    title: '昵称',
+    format: e => e || '-'
   },
   color: {
     title: '毛色'
@@ -70,8 +71,9 @@ Page({
       this.setData({
         id: e.id
       })
+      $._showLoading()
       await this.getCurrentCat()
-
+      $._hideLoading()
     }
   },
 

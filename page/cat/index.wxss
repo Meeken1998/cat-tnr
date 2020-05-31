@@ -39,3 +39,12 @@
   color: #7aa5eb;
   margin-top: 11rpx;
 }
+
+.loading {
+  width: 100vw;
+  padding-top: 44rpx;
+}
+
+/* .divider-line:last-child {
+  visibility: hidden;
+} */

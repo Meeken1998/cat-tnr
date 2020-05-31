@@ -9,6 +9,7 @@
     "van-search": "@vant/weapp/search/index",
     "van-sticky": "@vant/weapp/sticky/index",
     "cat-item": "/component/cat-item/index",
-    "add-button": "/component/add-button/index"
+    "add-button": "/component/add-button/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
   }
 }

@@ -1,5 +1,9 @@
 // component/cat-item/index.js
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   properties: {
     options: {
       type: Object,
