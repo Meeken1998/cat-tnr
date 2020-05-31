@@ -3,6 +3,25 @@ const $ = require('../../util/api/request')
 const Api = require('../../util/api/index')
 const App = getApp()
 
+function dateFormat(fmt, date) {
+  let ret
+  const opt = {
+    "Y+": date.getFullYear().toString(), // 年
+    "m+": (date.getMonth() + 1).toString(), // 月
+    "d+": date.getDate().toString(), // 日
+    "H+": date.getHours().toString(), // 时
+    "M+": date.getMinutes().toString(), // 分
+    "S+": date.getSeconds().toString() // 秒
+  }
+  for (let k in opt) {
+    ret = new RegExp("(" + k + ")").exec(fmt)
+    if (ret) {
+      fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
+    }
+  }
+  return fmt
+}
+
 Page({
   data: {
     fileList: [],
@@ -87,6 +106,7 @@ Page({
         timeline: []
       }
       let res
+      $._showLoading('正在保存')
       if (!this.data.id) {
         res = await Api.Cat.create(cat)
       } else {
@@ -95,6 +115,7 @@ Page({
         }))
       }
       if (res.code == 200) {
+        $._hideLoading()
         wx.showModal({
           cancelColor: 'cancelColor',
           title: '温馨提示',
@@ -168,11 +189,11 @@ Page({
     let catRes = await Api.Cat.get(id)
     if (catRes.code != 200) return
     let cat = catRes.data
-    cat.maleIndex = this.data.maleList.indexOf(cat.male) == -1 ? 0 : this.data.maleList.indexOf(cat.male)
+    cat.maleIndex = cat.male ? 0 : 1
     cat.colorIndex = this.data.colorList.indexOf(cat.color) == -1 ? 0 : this.data.colorList.indexOf(cat.color)
     cat.statusIndex = this.data.statusList.indexOf(cat.status) == -1 ? 0 : this.data.statusList.indexOf(cat.status)
-    cat.sterilizationIndex = this.data.sterilizationList.indexOf(cat.sterilization) == -1 ? 0 : this.data.sterilizationList.indexOf(cat.sterilization)
-    cat.sterilizationDate = cat.sterilizationDate == '0' ? '' : cat.sterilizationDate
+    cat.sterilizationIndex = cat.sterilization ? 1 : 0
+    cat.sterilizationDate = cat.sterilizationDate == '0' ? '' : dateFormat("YYYY-mm-dd", new Date(cat.sterilizationDate * 1000))
 
     cat.fileList = cat.photo.map(item => {
       return {
