@@ -23,6 +23,7 @@ function dateFormat(fmt, date) {
 }
 
 const dic = {
+  id: '',
   name: {
     title: '大名',
   },
@@ -45,7 +46,7 @@ const dic = {
   },
   sterilizationDate: {
     title: '绝育日期',
-    format: e => dateFormat("YYYY-mm-dd", new Date(e * 1000))
+    format: e => e ? dateFormat("YYYY-mm-dd", new Date(e * 1000)) : '-'
   },
   character: {
     title: '性格'
@@ -64,12 +65,26 @@ Page({
     catInfo: []
   },
 
-  async onShow() {
-    await this.getCurrentCat()
+  async onLoad(e) {
+    if (e.id) {
+      this.setData({
+        id: e.id
+      })
+      await this.getCurrentCat()
+
+    }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: this.data.cat.name,
+      imageUrl: this.data.cat.photo[0],
+      path: '/page/cat/detail?id=' + this.data.id
+    }
   },
 
   async getCurrentCat() {
-    let res = await Api.Cat.get('5ed23dfbf9a9b5205eeda8fe')
+    let res = await Api.Cat.get(this.data.id)
     if (res && res.code == 200 && typeof res.data === 'object') {
       // 获取到猫咪信息，开始格式化
       let cat = res.data,

@@ -1,5 +1,5 @@
 <view class="s-cat--item flex-row-between-center" hover-class="hover" bindtap="handleViewCat">
-	<image class="avatar" src="{{ options.photo }}"></image>
+	<image class="avatar" src="{{ options.photo.length ? options.photo[0] : '' }}" mode="aspectFill"></image>
 	<view class="name">{{ options.name }}</view>
 </view>
 <view class="divider-line">

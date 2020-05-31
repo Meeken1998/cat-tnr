@@ -18,7 +18,7 @@ Component({
   methods: {
     handleViewCat() {
       wx.navigateTo({
-        url: '/page/cat/detail',
+        url: '/page/cat/detail?id=' + this.properties.options._id,
       })
     }
   }

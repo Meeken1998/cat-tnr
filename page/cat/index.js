@@ -1,5 +1,11 @@
+const regeneratorRuntime = require("../../util/runtime.js")
+const $ = require('../../util/api/request')
+const Api = require('../../util/api/index')
+const App = getApp()
+
 Page({
   data: {
+    list: [],
     search: '',
     option1: [{
         text: '全部毛色',
@@ -73,7 +79,22 @@ Page({
     console.log(e)
   },
 
-  onPullDownRefresh() {
+  async onPullDownRefresh() {
+    await this.getCatList()
+    wx.stopPullDownRefresh({})
+  },
 
+  async onShow() {
+    await this.getCatList()
+  },
+
+
+  async getCatList() {
+    let res = await Api.Cat.list()
+    if (res.code == 200) {
+      this.setData({
+        list: res.data
+      })
+    }
   }
 })

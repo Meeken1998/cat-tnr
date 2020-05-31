@@ -1,9 +1,14 @@
 <view class="s-manage--page">
+	<van-uploader file-list="{{ fileList }}" bind:after-read="handleAfterRead" preview-size="120rpx" max-count="{{ 9 }}" />
+
 	<van-cell-group>
 		<van-field value="{{ name }}" data-t="name" clearable label="猫咪大名" placeholder="请输入猫咪大名" bind:change="handleValueChange" input-align="right" />
 		<van-field value="{{ nickname }}" data-t="nickname" clearable label="昵称" placeholder="请输入猫咪昵称" bind:change="handleValueChange" input-align="right" />
 		<picker bindchange="handlePickerChange" data-t="male" value="{{ maleIndex }}" range="{{ maleList }}">
 			<van-cell title="性别" value="{{ maleList[maleIndex] }}" is-link />
+		</picker>
+		<picker bindchange="handlePickerChange" data-t="color" value="{{ colorIndex }}" range="{{ colorList }}">
+			<van-cell title="毛色" value="{{ colorList[colorIndex] }}" is-link />
 		</picker>
 		<picker bindchange="handlePickerChange" data-t="status" value="{{ statusIndex }}" range="{{ statusList }}">
 			<van-cell title="状态" value="{{ statusList[statusIndex] }}" is-link />
@@ -12,10 +17,16 @@
 			<van-cell title="是否绝育" value="{{ sterilizationList[sterilizationIndex] }}" is-link />
 		</picker>
 		<van-field value="{{ sterilizationDate }}" data-t="sterilizationDate" clearable label="绝育时间" placeholder="如 2019-05-23" bind:change="handleValueChange" input-align="right" disabled="{{ sterilizationIndex == 0 }}" />
+		<van-field value="{{ firstMeetTime }}" data-t="firstMeetTime" clearable label="初次见面" placeholder="如 2019-05-23" bind:change="handleValueChange" input-align="right" />
 		<picker bindchange="handlePickerChange" data-t="character" value="{{ characterIndex }}" range="{{ characterList }}">
 			<van-cell title="性格" value="{{ characterList[characterIndex] }}" is-link />
 		</picker>
 
 		<van-field value="{{ relationship }}" type="textarea" autosize="{{  { maxHeight: 100, minHeight: 44 } }}" data-t="relationship" clearable label="猫际关系" placeholder="请输入猫际关系，如是某猫所生，和某某猫亲近，和某某猫疏远，和某某猫打架" bind:change="handleValueChange" input-align="right" />
 	</van-cell-group>
+
+	<view class="s-manage--button-bar">
+		<van-button type="info" round custom-class="publish-button" bind:click="handlePublish">保存</van-button>
+	</view>
+
 </view>

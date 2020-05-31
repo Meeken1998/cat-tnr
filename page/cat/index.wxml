@@ -17,15 +17,6 @@
 	</van-sticky>
 	<!-- 猫咪信息 -->
 	<view class="s-cat--info-box">
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
-		<cat-item />
+		<cat-item wx:for="{{ list }}" wx:key="key" options="{{ item }}" />
 	</view>
 </view>

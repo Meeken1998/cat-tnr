@@ -3,3 +3,12 @@
   min-height: 100vh;
   padding: 28rpx;
 }
+
+.s-manage--button-bar {
+  width: 100%;
+  margin-top: 28rpx;
+}
+
+.publish-button {
+  width: 100%;
+}

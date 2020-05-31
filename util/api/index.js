@@ -4,7 +4,9 @@
  */
 const regeneratorRuntime = require("../runtime")
 const Cat = require('./controller/cat')
+const Upload = require('./controller/upload')
 
 module.exports = {
-  Cat
+  Cat,
+  Upload
 }

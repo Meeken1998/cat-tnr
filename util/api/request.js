@@ -8,6 +8,10 @@ let options = {
   host: 'http://192.168.0.100:4000/api/v1/',
   header: {},
   userPoolId: '5ecb891fae9ae00850555f7b',
+  qiniu: {
+    region: 'SCN',
+    domain: 'img.meek3n.cn',
+  }
 }
 const Authing = new authing({
   userPoolId: options.userPoolId
@@ -218,5 +222,6 @@ module.exports = {
   _hideLoading,
   _download,
   _loginWithAuthing,
-  _Authing: Authing
+  _Authing: Authing,
+  _options: options
 }

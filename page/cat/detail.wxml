@@ -1,4 +1,4 @@
-<view class="s-detail--page">
+<view wx:if="{{ cat.name }}" class="s-detail--page">
 	<image wx:if="{{ cat.photo && cat.photo.length }}" class="s-detail--cat-image" src="{{ cat.photo[0] }}" mode="aspectFill"></image>
 	<view wx:if="{{ cat.name }}" class="s-detail--cat-menu-icon">
 		<view class="item">
