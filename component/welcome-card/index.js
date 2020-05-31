@@ -18,5 +18,13 @@ Component({
         username: "black sheep"
       }
     }
+  },
+
+  methods: {
+    handleLogin() {
+      wx.navigateTo({
+        url: '/page/login/index',
+      })
+    }
   }
 })

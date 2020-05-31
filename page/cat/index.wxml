@@ -22,7 +22,7 @@
 			<van-skeleton title avatar row="3" />
 			<van-skeleton title avatar row="3" />
 		</view>
-		<cat-item wx:for="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? searchList : list }}" wx:key="key" options="{{ item }}" border="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? index !== searchList.length - 1 : index !== list.length - 1 }}" />
+		<cat-item wx:for="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? searchList : list }}" wx:key="key" options="{{ item }}" border="{{ search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? index !== searchList.length - 1 : index !== list.length - 1 }}" bind:long="handleEditCat" />
 		<view wx:if="{{ !loading && (search || value1 !== '全部毛色' || value2 !== '全部性格' || value3 !== '全部状态' ? !searchList.length : !list.length) }}" class="s-cat--404 flex-column-center-center">
 			<image src="/static/img/list/404.png"></image>
 			<view>猫咪们迷路啦</view>
@@ -30,3 +30,5 @@
 		</view>
 	</view>
 </view>
+
+<van-action-sheet show="{{ isActionShow }}" actions="{{ actions }}" bind:close="handleActionClose" bind:select="handleActionSelect" cancel-text="取消" bind:cancel="handleActionClose" description="Hi，猫咪管理员" />

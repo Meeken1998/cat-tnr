@@ -24,6 +24,10 @@ Component({
       wx.navigateTo({
         url: '/page/cat/detail?id=' + this.properties.options._id,
       })
+    },
+
+    handleLongPress() {
+      this.triggerEvent('long', this.properties.options)
     }
   }
 })

@@ -42,6 +42,11 @@ const Cat = {
   async update(id = '', options = {}) {
     let res = await $._put(`cat/${id}`, options)
     return res
+  },
+
+  async delete(id = '') {
+    let res = await $._delete(`cat/${id}`, {})
+    return res
   }
 }
 

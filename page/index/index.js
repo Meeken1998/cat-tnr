@@ -5,11 +5,14 @@ const App = getApp()
 
 Page({
   async onShow() {
-    let res = await Api.Cat.helloWorld()
-    console.log(res)
+    let authingUserInfo = await Api.Cat.helloWorld()
+    if (authingUserInfo.code == 200) {
+      wx.setStorageSync('user', authingUserInfo.data)
+    }
   },
 
   onPullDownRefresh() {
 
-  }
+  },
+
 })

@@ -7,7 +7,7 @@
 			<view class="title">{{ options.title }}</view>
 		</view>
 		<!-- 右侧头像 -->
-		<image class="s-card--avatar" src="{{ userInfo.photo }}"></image>
+		<image class="s-card--avatar" src="{{ userInfo.photo }}" bindtap="handleLogin"></image>
 	</view>
 	<view class="s-card--welcome" hover-class="hover">
 		<image class="wrapper-image" mode="aspectFill" src="{{ options.wrapper }}"></image>

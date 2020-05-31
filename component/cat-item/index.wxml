@@ -1,4 +1,4 @@
-<view class="s-cat--item flex-row-between-center" hover-class="hover" bindtap="handleViewCat">
+<view class="s-cat--item flex-row-between-center" hover-class="hover" bindtap="handleViewCat" bindlongpress="handleLongPress">
 	<!-- <image class="avatar" src="{{ options.photo.length ? options.photo[0] : '' }}" mode="aspectFill"></image> -->
 	<van-image round width="88rpx" height="88rpx" src="{{ options.photo.length ? options.photo[0] : '' }}" fit="cover" lazy-load />
 	<view class="name">{{ options.name }}</view>

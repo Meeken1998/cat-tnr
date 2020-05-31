@@ -13,7 +13,7 @@ Page({
   },
 
   async checkLogin() {
-    $._showLoading('自动登录中')
+    $._showLoading('联络喵星中')
     try {
       let res = await $._login()
       console.log(res)

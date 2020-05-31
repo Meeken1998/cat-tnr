@@ -31,7 +31,7 @@ const _request = function (url, method, data) {
       header: options.header,
       success(res) {
         if (res.data.code == 403) reject(res)
-        if (res.statusCode === 200 && res.data !== undefined) {
+        if (res.statusCode === 200 && res.data !== undefined && res.data.code == 200) {
           result = res.data
           resolve(res.data)
         } else {
@@ -55,7 +55,7 @@ const _request = function (url, method, data) {
       })
     } else {
       /* 错误收集 */
-      if (result && result.error && result.message) {
+      if (err && err.data.error && err.data.message) {
         wx.showModal({
           title: '温馨提示',
           content: result.message,

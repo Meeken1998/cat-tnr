@@ -9,6 +9,14 @@ Page({
     search: '',
     searchList: [],
     loading: true,
+    isActionShow: false,
+    actions: [{
+        name: '编辑',
+      },
+      {
+        name: '删除',
+      },
+    ],
     option1: [{
         text: '全部毛色',
         value: '全部毛色'
@@ -90,15 +98,15 @@ Page({
   },
 
   async onShow() {
-    // $._showLoading()
+    const role = wx.getStorageSync('user')
     this.setData({
-      loading: true
+      loading: true,
+      hasPermission: role && role.permission instanceof Array && role.permission.includes('cat:editor')
     })
     await this.getCatList()
     this.setData({
       loading: false
     })
-    // $._hideLoading()
   },
 
 
@@ -134,5 +142,50 @@ Page({
       value3: '全部状态'
     })
     this.getSearchList()
+  },
+
+  handleEditCat(e) {
+    if (this.data.hasPermission) {
+      this.setData({
+        currentCat: e.detail,
+        isActionShow: true
+      })
+    }
+  },
+
+  handleActionClose() {
+    this.setData({
+      isActionShow: false
+    })
+  },
+
+  handleActionSelect(e) {
+    if (e.detail.name == '编辑') {
+      wx.navigateTo({
+        url: '/page/manage/index?id=' + this.data.currentCat._id,
+      })
+    } else if (e.detail.name == '删除') {
+      wx.showModal({
+        title: '提示',
+        content: '删除猫咪后不可恢复，是否继续？',
+        success: async (s) => {
+          if (s.confirm) {
+            let res = await Api.Cat.delete(this.data.currentCat._id)
+            if (res.code == 200) {
+              wx.showToast({
+                title: '删除成功',
+              })
+            } else {
+              wx.showToast({
+                title: '删除失败',
+                icon: 'none'
+              })
+            }
+            await this.getCatList()
+          }
+        }
+      })
+    }
   }
+
 })
