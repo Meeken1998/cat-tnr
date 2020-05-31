@@ -83,7 +83,7 @@
 					"id": 3,
 					"name": "编辑猫咪",
 					"pathName": "page/manage/index",
-					"query": "id=5ed3655dbc2cc746433b9b90",
+					"query": "",
 					"scene": null
 				}
 			]

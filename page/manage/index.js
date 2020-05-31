@@ -180,8 +180,8 @@ Page({
       this.setData({
         id: e.id
       })
+      await this.getCurrentCat()
     }
-    await this.getCurrentCat()
   },
 
   async getCurrentCat() {
