@@ -7,8 +7,8 @@
 			<text class="title">性别</text>
 		</view>
 		<view class="item">
-			<text class="jan-icon jan-icon-skin color-icon orange"></text>
-			<text class="title">{{ '毛色' }}</text>
+			<text class="color-icon color-text {{ (cat.color == '橘色' && 'orange') || (cat.color == '纯色' && 'purity') || (cat.color == '三花/玳瑁' && 'tortoiseshell') || (cat.color == '狸花' && 'fox') || (cat.color == '奶牛' && 'cow') }}">{{ (cat.color == '橘色' && '橘') || (cat.color == '纯色' && '纯') || (cat.color == '三花/玳瑁' && '花') || (cat.color == '狸花' && '狸') || (cat.color == '奶牛' && '牛') }}</text>
+			<text class="title">毛色</text>
 		</view>
 		<view class="item">
 			<text wx:if="{{ cat.sterilization }}" class="jan-icon jan-icon-check-circle color-icon green"></text>
@@ -16,7 +16,9 @@
 			<text class="title">绝育</text>
 		</view>
 		<view class="item">
-			<text class="jan-icon jan-icon-smile color-icon indiared"></text>
+			<text wx:if="{{ cat.character == '亲人' }}" class="jan-icon jan-icon-smile color-icon indiared"></text>
+			<text wx:if="{{ cat.character == '怕生' }}" class="jan-icon jan-icon-meh color-icon indiared"></text>
+			<text wx:if="{{ cat.character == '怕人' }}" class="jan-icon jan-icon-frown color-icon indiared"></text>
 			<text class="title">性格</text>
 		</view>
 	</view>

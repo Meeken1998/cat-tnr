@@ -3,58 +3,70 @@ Page({
     search: '',
     option1: [{
         text: '全部毛色',
-        value: 0
+        value: '全部毛色'
       },
       {
-        text: '橘色',
-        value: 1
+        text: '三花/玳瑁',
+        value: '三花/玳瑁'
       },
       {
         text: '狸花',
-        value: 2
+        value: '狸花'
+      },
+      {
+        text: '橘色',
+        value: '橘色'
+      },
+      {
+        text: '奶牛',
+        value: '奶牛'
+      },
+      {
+        text: '纯色',
+        value: '纯色'
       },
     ],
     option2: [{
         text: '全部性格',
-        value: 'a'
+        value: '全部性格'
       },
       {
-        text: '亲人可抱',
-        value: 'b'
+        text: '亲人',
+        value: '亲人'
       },
       {
-        text: '随机亲人',
-        value: 'c'
+        text: '怕生',
+        value: '怕生'
       },
       {
         text: '怕人',
-        value: 'd'
+        value: '怕人'
       },
     ],
     option3: [{
         text: '全部状态',
-        value: 'a0'
+        value: '全部状态'
       },
       {
         text: '在校',
-        value: 'b'
+        value: '在校'
       },
       {
         text: '毕业',
-        value: 'c'
+        value: '毕业'
       },
       {
         text: '休学',
-        value: 'd'
+        value: '休学'
       },
       {
         text: '喵星',
-        value: 'e'
+        value: '喵星'
       },
     ],
-    value1: 0,
-    value2: 'a',
-    value3: 'a0'
+    value1: '全部毛色',
+    value2: '全部性格',
+    value3: '全部状态'
   },
 
   handleSearch(e) {
@@ -62,6 +74,6 @@ Page({
   },
 
   onPullDownRefresh() {
-    
+
   }
 })

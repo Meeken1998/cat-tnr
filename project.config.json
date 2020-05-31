@@ -76,6 +76,13 @@
 					"id": -1,
 					"name": "猫咪详情",
 					"pathName": "page/cat/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "编辑猫咪",
+					"pathName": "page/manage/index",
 					"scene": null
 				}
 			]

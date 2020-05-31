@@ -54,6 +54,27 @@ text.color-icon {
   background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
 }
 
+.color-icon.purity {
+  background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+}
+
+
+.color-icon.tortoiseshell {
+  background-image: linear-gradient(to right, #decf00 0%, #fc00ff 100%);
+}
+
+.color-icon.cow {
+  background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+}
+
+.color-icon.fox {
+  background-image: linear-gradient(to right, #a09b84 0%, #916033 100%);
+}
+
+.color-text {
+  font-size: 44rpx;
+}
+
 .jan-icon {
   font-size: 56rpx;
 }

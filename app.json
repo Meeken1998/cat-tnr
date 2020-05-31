@@ -3,7 +3,8 @@
     "page/index/index",
     "page/login/index",
     "page/cat/index",
-    "page/cat/detail"
+    "page/cat/detail",
+    "page/manage/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

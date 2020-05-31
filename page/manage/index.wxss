@@ -1,0 +1,5 @@
+.s-manage--page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 28rpx;
+}
