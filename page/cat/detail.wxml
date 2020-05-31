@@ -26,7 +26,15 @@
 		<van-cell-group>
 			<van-cell wx:for="{{ catInfo }}" wx:key="key" title="{{ item.key }}" value="{{ item.value }}" info border="{{ index < catInfo.length - 1 }}" />
 		</van-cell-group>
-		<text class="jan-icon jan-icon-man color-icon"></text>
 	</view>
+
+	<scroll-view wx:if="{{ cat.relations && cat.relations.length }}" class="s-cat-relations" scroll-x>
+		<view class="relations-bar">
+			<view wx:for="{{ cat.relations }}" wx:key="key2" class="relations-item" hover-class="hover" data-cat="{{ item }}" bindtap="handleViewAnother">
+				<image src="{{ item.photo[0] }}" mode="aspectFill"></image>
+				<view class="name">{{ item.name }}</view>
+			</view>
+		</view>
+	</scroll-view>
 
 </view>

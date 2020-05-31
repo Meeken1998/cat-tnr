@@ -6,7 +6,7 @@
 				<view style="width: calc(100% - 34px);">
 					<van-search value="{{ search }}" placeholder="请输入猫咪名称" shape="round" bind:change="handleSearch" />
 				</view>
-				<add-button />
+				<add-button bind:click="handleAddCatClick" />
 			</view>
 			<van-dropdown-menu active-color="#9bb5e5">
 				<van-dropdown-item data-k="value1" value="{{ value1 }}" options="{{ option1 }}" bind:change="handleDropMenuChange" />

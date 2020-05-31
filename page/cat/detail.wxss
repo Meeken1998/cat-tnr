@@ -102,3 +102,44 @@ text.color-icon {
   width: calc(100% - 72rpx);
   margin: 0 36rpx;
 }
+
+.s-cat-relations {
+  width: calc(100vw - 22rpx);
+  margin: 22rpx 11rpx;
+}
+
+.s-cat-relations .relations-bar {
+  min-width: calc(100vw - 44rpx);
+  margin: 0 22rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.s-cat-relations .relations-item {
+  width: 160rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.relations-item.hover {
+  background-color: #f7f8fa;
+}
+
+.s-cat-relations image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.s-cat-relations .name {
+  font-size: 24rpx;
+  color: #555;
+  margin-top: 11rpx;
+}

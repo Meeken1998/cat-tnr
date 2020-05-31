@@ -45,6 +45,7 @@ Page({
     characterIndex: 0,
     firstMeetTime: '',
     relationship: '',
+    relations: ''
   },
 
   handleValueChange(e) {
@@ -102,7 +103,7 @@ Page({
         firstMeetTime: this.data.firstMeetTime,
         relationship: this.data.relationship,
         photo: uploadRes && uploadRes instanceof Array ? uploadRes : [],
-        relations: [],
+        relations: this.data.relations.replace(new RegExp('，', 'g'), ',').split(','),
         timeline: []
       }
       let res
@@ -181,6 +182,10 @@ Page({
         id: e.id
       })
       await this.getCurrentCat()
+    } else {
+      wx.setNavigationBarTitle({
+        title: '新增猫咪',
+      })
     }
   },
 
@@ -194,7 +199,7 @@ Page({
     cat.statusIndex = this.data.statusList.indexOf(cat.status) == -1 ? 0 : this.data.statusList.indexOf(cat.status)
     cat.sterilizationIndex = cat.sterilization ? 1 : 0
     cat.sterilizationDate = cat.sterilizationDate == '0' ? '' : dateFormat("YYYY-mm-dd", new Date(cat.sterilizationDate * 1000))
-
+    cat.relations = cat.relations instanceof Array && cat.relations.every(item => item.name) ? cat.relations.map(item => item.name).join('，') : ''
     cat.fileList = cat.photo.map(item => {
       return {
         path: item

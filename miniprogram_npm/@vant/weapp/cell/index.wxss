@@ -152,11 +152,6 @@
   font-size: var(--cell-large-label-font-size, 14px)
 }
 
-.van-cell--info {
-  /* padding-left: 16rpx !important;
-  padding-right: 16rpx !important; */
-}
-
 .van-cell--info .van-cell__value {
   color: #444;
 }

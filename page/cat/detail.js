@@ -104,5 +104,11 @@ Page({
         catInfo
       })
     }
+  },
+
+  handleViewAnother(e) {
+    wx.navigateTo({
+      url: '/page/cat/detail?id=' + e.currentTarget.dataset.cat._id,
+    })
   }
 })

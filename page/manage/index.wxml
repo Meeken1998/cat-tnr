@@ -23,6 +23,8 @@
 		</picker>
 
 		<van-field value="{{ relationship }}" type="textarea" autosize="{{  { maxHeight: 100, minHeight: 44 } }}" data-t="relationship" clearable label="猫际关系" placeholder="请输入猫际关系，如是某猫所生，和某某猫亲近，和某某猫疏远，和某某猫打架" bind:change="handleValueChange" input-align="right" />
+		<van-field value="{{ relations }}" data-t="relations" clearable label="相关猫咪" placeholder="请输入相关猫咪名字，多个请用逗号隔开" bind:change="handleValueChange" input-align="right" />
+
 	</van-cell-group>
 
 	<view class="s-manage--button-bar">

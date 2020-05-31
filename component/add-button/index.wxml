@@ -1,3 +1,3 @@
-<view class="s-cat--plus-button" hover-class="hover">
+<view class="s-cat--plus-button" hover-class="hover" bindtap="handleTap">
 	<van-icon name="plus" color="#fff" size="16px" />
 </view>
