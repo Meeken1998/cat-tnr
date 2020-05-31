@@ -180,6 +180,13 @@ Page({
       }
     })
     this.setData(cat)
-  }
+  },
 
+  handleDeleteImage(e) {
+    let fileList = this.data.fileList
+    fileList.splice(e.detail.index * 1, 1)
+    this.setData({
+      fileList
+    })
+  }
 })

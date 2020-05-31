@@ -1,5 +1,5 @@
 <view class="s-manage--page">
-	<van-uploader file-list="{{ fileList }}" bind:after-read="handleAfterRead" preview-size="120rpx" max-count="{{ 9 }}" />
+	<van-uploader file-list="{{ fileList }}" bind:after-read="handleAfterRead" preview-size="120rpx" max-count="{{ 9 }}" bind:delete="handleDeleteImage" />
 
 	<van-cell-group>
 		<van-field value="{{ name }}" data-t="name" clearable label="猫咪大名" placeholder="请输入猫咪大名" bind:change="handleValueChange" input-align="right" />
