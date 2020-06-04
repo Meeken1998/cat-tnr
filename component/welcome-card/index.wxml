@@ -3,22 +3,22 @@
 	<view class="s-card--bannar flex-row-between-center">
 		<!-- 左侧日期与标题 -->
 		<view class="s-card--bannar-left-side">
-			<view class="tooltip">{{ options.tooltip }}</view>
-			<view class="title">{{ options.title }}</view>
+			<view class="tooltip">{{ date }}</view>
+			<view class="title">浙外 TNR</view>
 		</view>
 		<!-- 右侧头像 -->
-		<image class="s-card--avatar" src="{{ userInfo.photo }}" bindtap="handleLogin"></image>
+		<image class="s-card--avatar" src="{{ avatar || 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=27189250,2130222616&fm=26&gp=0.jpg' }}" bindtap="handleLogin"></image>
 	</view>
-	<view class="s-card--welcome" hover-class="hover">
-		<image class="wrapper-image" mode="aspectFill" src="{{ options.wrapper }}"></image>
+	<view wx:if="{{ cat && cat.length }}" class="s-card--welcome" hover-class="hover" bindtap="handleViewCat">
+		<image class="wrapper-image" mode="aspectFill" src="{{ cat[0]['photo'] }}"></image>
 		<view class="info">
 			<!-- 上层标题 -->
 			<view class="today-cat">
 				<view class="today-cat">今日吸猫</view>
-				<view class="text-limit-1 today-cat" style="font-size: 44rpx;font-weight: bold;">小明</view>
+				<view class="text-limit-1 today-cat" style="font-size: 44rpx;font-weight: bold;">{{ cat[0]['name'] }}</view>
 			</view>
 			<!-- 内容 -->
-			<view class="today-cat" style="opacity: 0.9;">男孩，1岁，现居雅正 7</view>
+			<view class="today-cat text-limit-2" style="opacity: 0.9;">{{ cat[0]['relationship'] }}</view>
 		</view>
 	</view>
 </view>

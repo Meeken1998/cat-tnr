@@ -3,7 +3,7 @@
 		<view class="s-category--arrow flex-row-between-center" bindtap="handle2CatPage">
 			<view>
 				<text style="color: #888;font-size: 24rpx;">截止今天，我们：</text>
-				<view class="text-limit-1" style="font-size: 33rpx;color: #333;">发现并帮助了 <text style="color: #608fda;font-weight: 600;">60</text> 只猫咪</view>
+				<view class="text-limit-1" style="font-size: 33rpx;color: #333;">发现并帮助了 <text style="color: #608fda;font-weight: 600;">{{ catCount || 0 }}</text> 只猫咪</view>
 			</view>
 			<van-icon name="arrow" size="44rpx" color="#888" />
 		</view>
@@ -11,8 +11,8 @@
 		<scroll-view class="s-category--cat-icon-scroller" scroll-x>
 			<view class="cat-bar">
 				<!-- 猫咪 logo -->
-				<view class="cat-button" wx:for="{{ options.cats }}" wx:key="key" hover-class="hover">
-					<image class="cat-icon" src="{{ item.icon }}"></image>
+				<view class="cat-button" wx:for="{{ cat }}" wx:key="key" hover-class="hover">
+					<image class="cat-icon" src="{{ item.photo }}" mode="aspectFill" data-cat="{{ item._id }}" bindtap="handleViewCurrentCat"></image>
 				</view>
 			</view>
 		</scroll-view>

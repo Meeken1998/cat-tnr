@@ -1,10 +1,10 @@
 <view class="s-cat--page flex-column-start-center">
 	<!-- 欢迎页面 -->
-	<welcome-card />
+	<welcome-card cat="{{ cat }}" avatar="{{ avatar }}" />
 
 	<!-- 猫咪分类 -->
-	<cat-category-card />
+	<cat-category-card cat-count="{{ catCount }}" cat="{{ cat }}" />
 
 	<!-- 文章聚合 -->
-	<article-card />
+	<article-card list="{{ article }}" />
 </view>

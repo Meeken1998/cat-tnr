@@ -72,4 +72,5 @@
 
 .today-cat {
   color: #fff !important;
+  text-shadow: 2rpx 2rpx 4rpx rgba(0, 0, 0, 0.6)
 }
