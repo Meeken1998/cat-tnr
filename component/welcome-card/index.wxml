@@ -7,7 +7,7 @@
 			<view class="title">浙外 TNR</view>
 		</view>
 		<!-- 右侧头像 -->
-		<image class="s-card--avatar" src="{{ avatar || 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=27189250,2130222616&fm=26&gp=0.jpg' }}" bindtap="handleLogin"></image>
+		<image class="s-card--avatar" src="{{ avatar || 'https://img.meek3n.cn/cat-tnr/not-login.jpg' }}" bindtap="handleLogin"></image>
 	</view>
 	<view wx:if="{{ cat && cat.length }}" class="s-card--welcome" hover-class="hover" bindtap="handleViewCat">
 		<image class="wrapper-image" mode="aspectFill" src="{{ cat[0]['photo'] }}"></image>
