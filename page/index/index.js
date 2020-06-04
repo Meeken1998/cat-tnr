@@ -8,7 +8,8 @@ Page({
     cat: [],
     article: [],
     catCount: 0,
-    avatar: ''
+    avatar: '',
+    loading: true
   },
 
   async onShow() {
@@ -16,6 +17,11 @@ Page({
       avatar: wx.getStorageSync('userInfo').avatarUrl
     })
 
+    if (this.data.cat.length) return
+    await this.getWelcomeInfo()
+  },
+
+  async getWelcomeInfo() {
     let authingUserInfo = await Api.Cat.helloWorld()
     if (authingUserInfo.code == 200) {
       wx.setStorageSync('user', authingUserInfo.data)
@@ -26,13 +32,14 @@ Page({
       this.setData({
         cat: res.data.cat,
         article: res.data.article,
-        catCount: res.data.catCount
+        catCount: res.data.catCount,
+        loading: false
       })
     }
   },
 
   async onPullDownRefresh() {
-    await this.onShow()
+    await this.getWelcomeInfo()
     wx.stopPullDownRefresh({})
   },
 

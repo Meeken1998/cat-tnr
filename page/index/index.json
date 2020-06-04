@@ -6,6 +6,7 @@
   "usingComponents": {
     "welcome-card": "/component/welcome-card/index",
     "cat-category-card": "/component/cat-category-card/index",
-    "article-card": "/component/article-card/index"
+    "article-card": "/component/article-card/index",
+    "van-loading": "@vant/weapp/loading/index"
   }
 }

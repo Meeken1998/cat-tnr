@@ -1,4 +1,4 @@
-<view class="s-cat--page flex-column-start-center">
+<view wx:if="{{ !loading }}" class="s-cat--page flex-column-start-center">
 	<!-- 欢迎页面 -->
 	<welcome-card cat="{{ cat }}" avatar="{{ avatar }}" />
 
@@ -7,4 +7,8 @@
 
 	<!-- 文章聚合 -->
 	<article-card list="{{ article }}" />
+</view>
+<view wx:else class="s-loading--page">
+	<van-loading size="64rpx"></van-loading>
+	<text style="margin-top: 44rpx;color: #b0b0b0;font-size: 28rpx;">联络喵星中</text>
 </view>
