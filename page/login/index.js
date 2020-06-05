@@ -55,6 +55,7 @@ Page({
     console.log('用户信息', res)
     $._setToken(wx.getStorageSync('_authing_token'))
     $._hideLoading()
+    wx.setStorageSync('reload', true)
     getCurrentPages().length > 1 ? wx.navigateBack() : wx.reLaunch({
       url: '/page/index/index',
     })

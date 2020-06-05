@@ -17,12 +17,13 @@ Page({
       avatar: wx.getStorageSync('userInfo').avatarUrl
     })
 
-    if (this.data.cat.length) return
+    if (this.data.cat.length && !wx.getStorageSync('reload')) return
     await this.getWelcomeInfo()
   },
 
   async getWelcomeInfo() {
     let authingUserInfo = await Api.Cat.helloWorld()
+    wx.removeStorageSync('reload')
     if (authingUserInfo.code == 200) {
       wx.setStorageSync('user', authingUserInfo.data)
     }

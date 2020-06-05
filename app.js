@@ -12,11 +12,6 @@ App({
       userRes = await $._login()
     } catch (err) {
       console.log(err)
-      if (err && err.msg) {
-        wx.navigateTo({
-          url: '/page/login/index',
-        })
-      }
     }
   }
 })
