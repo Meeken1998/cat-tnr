@@ -37,6 +37,7 @@
 		</view>
 	</scroll-view>
 
-	<image wx:for="{{ catExtraImages }}" wx:key="key2" class="s-detail--cat-image extra" src="{{ item }}" mode="aspectFill"></image>
-
+	<view style="{{ cat.relations && cat.relations.length ? '' : 'margin-top: 22rpx' }}">
+		<image wx:for="{{ catExtraImages }}" wx:key="key2" class="s-detail--cat-image" src="{{ item }}" mode="aspectFill"></image>
+	</view>
 </view>

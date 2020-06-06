@@ -144,6 +144,6 @@ text.color-icon {
   margin-top: 11rpx;
 }
 
-image.extra:not(:first-child) {
-  margin-top: 22rpx;
+image.s-cat--extra:first-child {
+  margin-top: 22px !important;
 }

@@ -45,7 +45,8 @@ Page({
     characterIndex: 0,
     firstMeetTime: '',
     relationship: '',
-    relations: ''
+    relations: '',
+    uploading: false
   },
 
   handleValueChange(e) {
@@ -82,6 +83,9 @@ Page({
     const imageList = this.data.fileList.map(item => item.path)
     try {
       $._showLoading('图片上传中')
+      this.setData({
+        uploading: true
+      })
       let uploadRes = await Api.Upload.uploadList(imageList)
       $._hideLoading()
       if (!uploadRes) {
@@ -117,6 +121,9 @@ Page({
       }
       if (res.code == 200) {
         $._hideLoading()
+        this.setData({
+          uploading: false
+        })
         wx.showModal({
           cancelColor: 'cancelColor',
           title: '温馨提示',
@@ -129,6 +136,9 @@ Page({
       }
     } catch (err) {
       $._hideLoading()
+      this.setData({
+        uploading: false
+      })
       wx.showModal({
         cancelColor: 'cancelColor',
         title: '温馨提示',
