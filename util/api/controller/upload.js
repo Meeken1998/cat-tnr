@@ -41,35 +41,20 @@ const Upload = {
     })
   },
 
-  uploadList(imgarr) {
-    return new Promise(async resolve => {
-      let arr = imgarr
-      let newArr = []
-      let time = 0
-      let timer = setInterval(() => {
-        time++
-        if (arr.length == newArr.length) {
-          clearInterval(timer)
-          resolve(newArr)
-        } else {
-          if (time == 40) {
-            clearInterval(timer)
-            resolve(false)
-          }
-        }
-      }, 500)
-      for (let i = 0; i < arr.length; i++) {
-        if (arr[i].includes('https://')) { //是现成的网络图片，无需上传
-          newArr.push(arr[i])
-        } else { //本地图片，需要上传
-          this.uploadImg(arr[i]).then(res => {
-            if (res.imageURL) {
-              newArr.push('https://' + res.imageURL)
-            }
-          })
+  async uploadList(imgarr) {
+    let arr = imgarr
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].includes('https://')) { //是现成的网络图片，无需上传
+        newArr.push(arr[i])
+      } else { //本地图片，需要上传
+        let res = await this.uploadImg(arr[i])
+        if (res.imageURL) {
+          newArr.push('https://' + res.imageURL)
         }
       }
-    })
+    }
+    return newArr.length ? newArr : false
   },
 }
 
