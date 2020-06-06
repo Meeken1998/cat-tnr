@@ -10,7 +10,7 @@
 		<image class="s-card--avatar" src="{{ avatar || 'https://img.meek3n.cn/cat-tnr/not-login.jpg' }}" bindtap="handleLogin"></image>
 	</view>
 	<view wx:if="{{ cat && cat.length }}" class="s-card--welcome" hover-class="hover" bindtap="handleViewCat">
-		<image class="wrapper-image" mode="aspectFill" src="{{ cat[0]['photo'] }}"></image>
+		<image class="wrapper-image" mode="aspectFill" src="{{ cat[0]['photo'][0] }}"></image>
 		<view class="info">
 			<!-- 上层标题 -->
 			<view class="today-cat">

@@ -143,3 +143,7 @@ text.color-icon {
   color: #555;
   margin-top: 11rpx;
 }
+
+image.extra:not(:first-child) {
+  margin-top: 22rpx;
+}

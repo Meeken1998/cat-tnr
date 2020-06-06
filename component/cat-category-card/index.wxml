@@ -12,7 +12,7 @@
 			<view class="cat-bar">
 				<!-- 猫咪 logo -->
 				<view class="cat-button" wx:for="{{ cat }}" wx:key="key" hover-class="hover">
-					<image class="cat-icon" src="{{ item.photo }}" mode="aspectFill" data-cat="{{ item._id }}" bindtap="handleViewCurrentCat"></image>
+					<image class="cat-icon" src="{{ item.photo[0] }}" mode="aspectFill" data-cat="{{ item._id }}" bindtap="handleViewCurrentCat"></image>
 				</view>
 			</view>
 		</scroll-view>

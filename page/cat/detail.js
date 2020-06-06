@@ -63,7 +63,8 @@ const dic = {
 Page({
   data: {
     cat: {},
-    catInfo: []
+    catInfo: [],
+    catExtraImages: []
   },
 
   async onLoad(e) {
@@ -101,7 +102,8 @@ Page({
       }
       this.setData({
         cat,
-        catInfo
+        catInfo,
+        catExtraImages: cat.photo instanceof Array && cat.photo.length > 1 ? cat.photo.slice(1) : []
       })
     }
   },
