@@ -44,4 +44,10 @@ Page({
     wx.stopPullDownRefresh({})
   },
 
+  onShareAppMessage() {
+    return {
+
+    }
+  }
+
 })

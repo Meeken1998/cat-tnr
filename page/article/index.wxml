@@ -1,0 +1,3 @@
+<view class="s-article--page">
+	<button bindtap="handleUpload">上传</button>
+</view>

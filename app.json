@@ -4,7 +4,8 @@
     "page/login/index",
     "page/cat/index",
     "page/cat/detail",
-    "page/manage/index"
+    "page/manage/index",
+    "page/article/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,7 +33,7 @@
       {
         "selectedIconPath": "static/img/tabbar/tips.png",
         "iconPath": "static/img/tabbar/tips-o.png",
-        "pagePath": "page/index/index",
+        "pagePath": "page/article/index",
         "text": "手册"
       }
     ]
