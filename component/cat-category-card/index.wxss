@@ -45,7 +45,6 @@
   height: 200rpx;
   border-radius: 10rpx;
   overflow: hidden;
-  opacity: 0.8;
 }
 
 .s-category--cat-icon-scroller .cat-button:not(:first-child) {

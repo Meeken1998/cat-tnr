@@ -6,7 +6,7 @@
   border-radius: 20rpx;
   padding: 36rpx 36rpx 44rpx 36rpx;
   overflow: hidden;
-  background-color: #fff7e4;
+  background-color: #ecf1fc;
 }
 
 .s-article--card-title {

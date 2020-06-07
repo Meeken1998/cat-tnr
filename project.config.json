@@ -85,6 +85,12 @@
 					"pathName": "page/manage/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发现页",
+					"pathName": "page/discover/index",
+					"scene": null
 				}
 			]
 		}

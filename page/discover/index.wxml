@@ -1,0 +1,18 @@
+<view class="s-discover--page">
+	<discover-menu bind:click="handleMenuButtonClick" />
+	<!-- 关于我们 -->
+	<view class="s-discover--about-us">
+		<view class="title">💡关于我们</view>
+		<view>浙江外国语学院流浪猫关爱组织（简称「浙外 TNR」组织），是由浙江外国语学院学生自发组织的非盈利性质志愿组织。</view>
+		<view>浙外 TNR 组织成立于 2011 年，致力于科学改善校园内现有流浪猫生活，以送养、绝育等方式减少校园流浪猫数量，调和人猫关系，营造良好的校园环境。</view>
+		<view class="title">👍我们倡导</view>
+		<view>在校不养宠，坚持领养代替购买，避免流浪猫依赖，喂食不触摸。</view>
+		<view class="title">🐱日常工作</view>
+		<view>我们相信只有科学管理，才能真正调和校园人猫关系，并积极地将校园内的每一只流浪猫，进行登记、调查情况、入库。除了每天的日常投喂，还会定期组织诱捕绝育和伤病猫救助。</view>
+		<view class="title" id="join">❤️申请加入</view>
+		<view>邮件请投：meeken@authing.cn，或<text style="color: #4e72c1;margin: 0 8rpx;" bindtap="handleCopyWechatId">添加负责人微信</text>。</view>
+	</view>
+</view>
+<!-- 猫咪不是人的附庸，只是被困在钢筋混凝土的森林中罢了。 -->
+
+<van-notify id="van-notify" />

@@ -5,7 +5,8 @@
     "page/cat/index",
     "page/cat/detail",
     "page/manage/index",
-    "page/article/index"
+    "page/camera/index",
+    "page/discover/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,10 +32,10 @@
         "text": "图鉴"
       },
       {
-        "selectedIconPath": "static/img/tabbar/tips.png",
-        "iconPath": "static/img/tabbar/tips-o.png",
-        "pagePath": "page/article/index",
-        "text": "手册"
+        "selectedIconPath": "static/img/tabbar/discover.png",
+        "iconPath": "static/img/tabbar/discover-o.png",
+        "pagePath": "page/discover/index",
+        "text": "发现"
       }
     ]
   },

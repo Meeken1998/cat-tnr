@@ -1,0 +1,6 @@
+<view class="s-discover--menu">
+	<view wx:for="{{ menuList }}" wx:key="key" class="s-discover--menu-item" style="{{ (index + 1) % 3 !== 0 ? 'border-right: 1px solid rgba(0, 0, 0, 0.2);' : '' }}{{ (index + 1) / 3 < menuList.length / 3 ? 'border-bottom: 1px solid rgba(0, 0, 0, 0.2);' : '' }}" hover-class="hover" data-t="{{ item }}" bindtap="handleClick">
+		<text class="jan-icon jan-icon-{{ item.icon }}" style="{{ item.disabled ? 'color: rgba(255, 255, 255, 0.8);' : '' }}"></text>
+		<text style="font-size: 24rpx;{{ item.disabled ? 'color: rgba(255, 255, 255, 0.8);' : '' }}">{{ item.title }}</text>
+	</view>
+</view>

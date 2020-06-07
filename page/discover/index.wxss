@@ -1,0 +1,25 @@
+.s-discover--page {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 22rpx 0;
+}
+
+.s-discover--about-us {
+  width: calc(100vw - 44rpx);
+  margin: 28rpx 33rpx 22rpx 33rpx;
+  color: #444;
+  font-size: 26rpx;
+  line-height: 1.6;
+  letter-spacing: 4rpx;
+}
+
+.s-discover--about-us view {
+  margin-bottom: 16rpx;
+}
+
+.s-discover--about-us .title {
+  font-size: 32rpx;
+  color: #111;
+  margin-bottom: 16rpx;
+  margin-top: 22rpx;
+}
