@@ -1,6 +1,10 @@
 import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
 
 Page({
+  data: {
+    isContributorShow: false
+  },
+
   handleMenuButtonClick(e) {
     const target = e.detail
     const menuList = [{
@@ -62,6 +66,34 @@ Page({
   handleJoinUs() {
     wx.pageScrollTo({
       selector: '#join'
+    })
+  },
+
+  onShareAppMessage() {
+    return {
+      imageUrl: 'https://img.meek3n.cn/mew.jpeg',
+      title: '发现浙外猫咪图鉴',
+    }
+  },
+
+  handleViewContributor() {
+    this.setData({
+      isContributorShow: true
+    })
+  },
+
+  handleDialogClose() {
+    this.setData({
+      isContributorShow: false
+    })
+  },
+
+  handleCopyRepoUrl() {
+    wx.setClipboardData({
+      data: 'wow',
+    })
+    this.setData({
+      isContributorShow: false
     })
   }
 })

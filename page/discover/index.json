@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "discover-menu": "/component/discover-menu/index",
-    "van-notify": "@vant/weapp/notify/index"
+    "van-notify": "@vant/weapp/notify/index",
+    "van-dialog": "@vant/weapp/dialog/index"
   }
 }

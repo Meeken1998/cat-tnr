@@ -13,8 +13,10 @@
   letter-spacing: 4rpx;
 }
 
-.s-discover--about-us view {
-  margin-bottom: 16rpx;
+.s-discover--about-us view.content {
+  /* margin-bottom: 16rpx; */
+  width: calc(100% - 22rpx);
+  margin: 0 11rpx 16rpx 11rpx;
 }
 
 .s-discover--about-us .title {
@@ -22,4 +24,17 @@
   color: #111;
   margin-bottom: 16rpx;
   margin-top: 22rpx;
+  padding: 0;
+}
+
+.s-discover--about-us .link {
+  color: #4e72c1;
+  margin: 0 8rpx;
+}
+
+.s-contribute--bar {
+  width: 100%;
+  padding: 22rpx 66rpx;
+  color: #555;
+  font-size: 24rpx;
 }
