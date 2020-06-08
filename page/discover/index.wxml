@@ -11,8 +11,8 @@
 		<view class="content">我们相信只有科学管理，才能真正调和校园人猫关系，并积极地将校园内的每一只流浪猫，进行登记、调查情况、入库。除了每天的日常投喂，还会定期组织诱捕绝育和伤病猫救助。</view>
 		<view class="title" id="join">❤️申请加入</view>
 		<view class="content">邮件请投：meeken@authing.cn，或<text class="link" bindtap="handleCopyWechatId">添加负责人微信</text>和我们取得联系，为流浪猫救助贡献力量。</view>
-		<view class="title">💻接入小程序</view>
-		<view class="content">《浙外猫咪图鉴》项目源代码基于"GPL-3.0"协议全网开源，并提供技术支持，本项目源代码可用于<text style="font-weight: 500;">商业用途</text>，若您使用了本项目源代码，那么您的项目必须遵循协议进行<text style="font-weight: bold">全网开源</text>。<text class="link" bindtap="handleViewContributor">查看鸣谢人员与接入指南</text>。</view>
+		<view class="title">💻接入项目</view>
+		<view class="content">《浙外猫咪图鉴》项目源代码基于"GPL-3.0"协议全网开源，本项目源代码可用于<text style="font-weight: 500;">商业用途</text>，若您使用了本项目源代码，那么您的项目必须遵循协议进行<text style="font-weight: bold">全网开源</text>。<text class="link" bindtap="handleViewContributor">查看鸣谢人员与接入指南</text>。</view>
 	</view>
 </view>
 <!-- 猫咪不是人的附庸，只是被困在钢筋混凝土的森林中罢了。 -->
@@ -20,10 +20,12 @@
 <van-notify id="van-notify" />
 <van-dialog use-slot title="Contributors ✨" show="{{ isContributorShow }}" show-cancel-button cancelButtonText="复制仓库地址" bind:close="handleDialogClose" bind:confirm="handleDialogClose" bind:cancel="handleCopyRepoUrl">
 	<view class="s-contribute--bar">
-		<view>前、后端：@Meeken1998</view>
+		<view>前、后端：@meeken1998</view>
 		<view>拍照识猫：@vexilligera</view>
 		<view>识猫服务：@liaochangjiang</view>
 		<view>部署脚本：@fuergaosi233</view>
+
+		<view style="margin: 22rpx 0;">发现页插画：Anastasia</view>
 	</view>
 
 </van-dialog>

@@ -126,6 +126,7 @@ text.color-icon {
   align-items: center;
   overflow: hidden;
   border-radius: 10rpx;
+  flex-shrink: 0;
 }
 
 .relations-item.hover {

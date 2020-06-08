@@ -5,7 +5,7 @@
 const regeneratorRuntime = require("../runtime")
 const authing = require('../authing/authing')
 let options = {
-  host: 'https://api.aside.fun/api/v1/',
+  host: 'http://api.aside.fun/api/v1/', // localhost:4000
   header: {},
   userPoolId: '5ecb891fae9ae00850555f7b',
   qiniu: {
