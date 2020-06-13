@@ -1,7 +1,7 @@
 <view class="s-article--card">
 	<view class="s-article--card-title">科普文章</view>
 	<van-cell-group custom-class="paper">
-		<van-cell wx:for="{{ list || [] }}" wx:key="key" title="{{ item.title }}" label="{{ item.brief }}" is-link />
-		<van-cell title="关注我们" value="浙外猫咪图鉴" is-link border="{{ false }}" />
+		<van-cell wx:for="{{ list || [] }}" wx:key="key" title="{{ item.title }}" label="{{ item.brief }}" is-link bind:click="handleTips" />
+		<van-cell title="关注我们" value="喵星浙外工作处" is-link border="{{ false }}" bind:click="handleCopy" />
 	</van-cell-group>
 </view>

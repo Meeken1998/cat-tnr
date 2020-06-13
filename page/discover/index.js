@@ -49,7 +49,8 @@ Page({
       },
       {
         title: '公众号',
-        icon: 'wechat-fill'
+        icon: 'wechat-fill',
+        handle: this.handleCopyWeappAccount
       },
     ]
 
@@ -59,6 +60,7 @@ Page({
 
   handleUploadImage() {
     wx.removeStorageSync('cats')
+    $._showLoading()
     wx.chooseImage({
       success: res => {
         const files = res.tempFilePaths
@@ -66,15 +68,24 @@ Page({
         wx.uploadFile({
           filePath: files[0],
           name: 'image',
-          url: 'http://39.98.214.108:5000/recognize',
+          url: 'https://tnr-image.aside.fun/recognize',
           success: async result => {
             let data = JSON.parse(result.data)
             data = data.data
             let cats = await Api.Cat.getRecognizeCats(data)
             console.log(cats)
             wx.setStorageSync('cats', cats.data)
+            $._hideLoading()
             wx.navigateTo({
               url: '/page/camera/index',
+            })
+          },
+
+          fail() {
+            $._hideLoading()
+            wx.showToast({
+              title: '查询失败，请检查网络',
+              icon: 'none'
             })
           }
         })
@@ -124,10 +135,16 @@ Page({
 
   handleCopyRepoUrl() {
     wx.setClipboardData({
-      data: 'wow',
+      data: 'https://github.com/meeken1998/cat-tnr',
     })
     this.setData({
       isContributorShow: false
+    })
+  },
+
+  handleCopyWeappAccount() {
+    wx.setClipboardData({
+      data: '喵星浙外工作处',
     })
   },
 
