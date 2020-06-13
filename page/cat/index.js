@@ -196,6 +196,11 @@ Page({
         content: '似乎你还不是猫咪板块管理员，暂时只有管理员才能编辑猫咪图鉴~',
         confirmText: '加入我们',
         cancelText: '再想想',
+        success: (e) => {
+          if (e.confirm) wx.reLaunch({
+            url: '/page/discover/index',
+          })
+        }
       })
     } else {
       wx.navigateTo({

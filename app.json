@@ -6,7 +6,8 @@
     "page/cat/detail",
     "page/manage/index",
     "page/camera/index",
-    "page/discover/index"
+    "page/discover/index",
+    "page/article/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

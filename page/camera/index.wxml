@@ -1,3 +1,3 @@
 <view class="s-article--page">
-	<button bindtap="handleUpload">上传</button>
+	<cat-item wx:for="{{ list }}" wx:key="key" options="{{ item }}" />
 </view>

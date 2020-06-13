@@ -1,8 +1,19 @@
 import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
-
+const regeneratorRuntime = require("../../util/runtime.js")
+const $ = require('../../util/api/request')
+const Api = require('../../util/api/index')
+const App = getApp()
 Page({
   data: {
     isContributorShow: false
+  },
+
+  onShow() {
+    const role = wx.getStorageSync('user')
+    this.setData({
+      hasPermission: role && role.permission instanceof Array && role.permission.includes('cat:editor'),
+      hasArticlePermission: role && role.permission instanceof Array && role.permission.includes('article:editor')
+    })
   },
 
   handleMenuButtonClick(e) {
@@ -28,7 +39,8 @@ Page({
       },
       {
         title: '添加猫咪',
-        icon: 'plus-circle'
+        icon: 'plus-circle',
+        handle: this.handleAddCatClick
       },
       {
         title: '加入我们',
@@ -46,7 +58,29 @@ Page({
   },
 
   handleUploadImage() {
-    console.log(1)
+    wx.removeStorageSync('cats')
+    wx.chooseImage({
+      success: res => {
+        const files = res.tempFilePaths
+        console.log(files)
+        wx.uploadFile({
+          filePath: files[0],
+          name: 'image',
+          url: 'http://39.98.214.108:5000/recognize',
+          success: async result => {
+            let data = JSON.parse(result.data)
+            data = data.data
+            let cats = await Api.Cat.getRecognizeCats(data)
+            console.log(cats)
+            wx.setStorageSync('cats', cats.data)
+            wx.navigateTo({
+              url: '/page/camera/index',
+            })
+          }
+        })
+      }
+    })
+
   },
 
   handleTips() {
@@ -95,5 +129,45 @@ Page({
     this.setData({
       isContributorShow: false
     })
+  },
+
+  handleAddCatClick() {
+    if (!this.data.hasPermission) {
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        title: 'ops！',
+        content: '似乎你还不是猫咪板块管理员，暂时只有管理员才能编辑猫咪图鉴~',
+        confirmText: '加入我们',
+        cancelText: '再想想',
+        success: (e) => {
+          if (e.confirm) this.handleJoinUs()
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: '/page/manage/index',
+      })
+    }
+  },
+
+  handleManageArticle() {
+    if (!this.data.hasPermission) {
+      wx.showModal({
+        cancelColor: 'cancelColor',
+        title: 'ops！',
+        content: '似乎你还不是文章板块管理员，暂时只有管理员才能编辑猫咪图鉴~',
+        confirmText: '加入我们',
+        cancelText: '再想想',
+        success: (e) => {
+          if (e.confirm) this.handleJoinUs()
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: '/page/article/index',
+      })
+    }
   }
+
+
 })

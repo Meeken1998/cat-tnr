@@ -47,6 +47,11 @@ const Cat = {
   async delete(id = '') {
     let res = await $._delete(`cat/${id}`, {})
     return res
+  },
+
+  async getRecognizeCats(data = []) {
+    let res = await $._post('cat/camera', data)
+    return res
   }
 }
 

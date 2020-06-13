@@ -90,6 +90,14 @@
 					"id": -1,
 					"name": "发现页",
 					"pathName": "page/discover/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "拍照识猫",
+					"pathName": "page/camera/index",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -210,6 +210,7 @@ Page({
     cat.sterilizationIndex = cat.sterilization ? 1 : 0
     cat.sterilizationDate = cat.sterilizationDate == '0' ? '' : dateFormat("YYYY-mm-dd", new Date(cat.sterilizationDate * 1000))
     cat.relations = cat.relations instanceof Array && cat.relations.every(item => item.name) ? cat.relations.map(item => item.name).join('，') : ''
+    cat.characterIndex = this.data.characterList.indexOf(cat.character || '亲人')
     cat.fileList = cat.photo.map(item => {
       return {
         path: item
