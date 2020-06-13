@@ -60,11 +60,11 @@ Page({
 
   handleUploadImage() {
     wx.removeStorageSync('cats')
-    $._showLoading()
     wx.chooseImage({
       success: res => {
         const files = res.tempFilePaths
         console.log(files)
+        $._showLoading()
         wx.uploadFile({
           filePath: files[0],
           name: 'image',
